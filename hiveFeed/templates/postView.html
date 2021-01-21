@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<br/>
+<h1 class="title"> {{ object.post_title }} </h1>
+<br/>
+
+{{ object.post_body }}
+<br/>
+<br/>
+<br/>
+<a href="{% url 'feed' %}"><button class="button is-link is-outlined">Back</button></a>
+{% else %}
+<h1 class="title">You suck at hacking</h1>
+
+{% endif %}
+ {% endblock %}
+

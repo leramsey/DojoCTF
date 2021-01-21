@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+</br>
+<table>
+<form method="post"> {% csrf_token %}
+    {{form.as_p}}
+
+    <button class="button is-info">Post</button>
+</form>
+</table>
+{% else %}
+<h1 class="title">NICE TRY HACKER SCUM</h1>
+{% endif %}
+{% endblock %}
